@@ -1,11 +1,13 @@
 #!/usr/bin/env Rscript
 
-install.packages("ggplot2")
-install.packages("dplyr")
-install.packages("readr")
-install.packages("leaflet")
-install.packages("lubridate")
-install.packages("maps")
-install.packages("ggmap")
-install.packages("ggthemes")
-install.packages("DT")
+ipak <- function(pkg){
+    new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+    if (length(new.pkg))
+        install.packages(new.pkg, dependencies = TRUE)
+    sapply(pkg, require, character.only = TRUE)
+}
+# usage
+packages <- c("ggplot2", "dplyr", "lubridate", "RColorBrewer", "scales", "gridExtra",
+              "GGally", "gganimate", "plotly", "caret", "stringr", "DT", "data.table",
+              "datatable", "maps", "ggmap", "ggthemes", "ggplot2", "leaflet", "readr")
+ipak(packages)
