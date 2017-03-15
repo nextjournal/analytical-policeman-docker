@@ -8,6 +8,7 @@ ipak <- function(pkg){
 }
 
 # install latest readxl to fix https://github.com/tidyverse/readxl/issues/59
+library(devtools)
 install_github("tidyverse/readxl")
 
 packages <- c("ggplot2", "dplyr", "lubridate", "RColorBrewer", "scales", "gridExtra",
