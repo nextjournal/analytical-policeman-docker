@@ -1,6 +1,6 @@
 FROM alpine:3.5
 
-RUN apk add --no-cache bash gawk autoconf sed grep bc coreutils curl gcc g++ git coreutils make gfortran expat-dev R \
+RUN apk add --no-cache bash gawk autoconf sed grep bc coreutils curl gcc g++ git coreutils make gfortran expat-dev R &&\
                        openjdk8 R-dev libressl-dev curl-dev libxml2-dev jpeg-dev ca-certificates gsl gsl-dev &&\
   R -q -e "install.packages('Rcpp', repo='https://cran.rstudio.com')" &&\
   curl -L -O https://cran.r-project.org/src/contrib/httpuv_1.3.3.tar.gz &&\
